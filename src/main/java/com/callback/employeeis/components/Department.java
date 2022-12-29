@@ -5,6 +5,7 @@
 package com.callback.employeeis.components;
 
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 /**
  *
@@ -48,5 +49,18 @@ public class Department extends Server {
     getStatement().setInt(2, code);
     
     getStatement().executeUpdate();
+  }
+  
+  public String getDepartmentName(int code) throws SQLException {
+    setStatement("SELECT * FROM department WHERE departCode = ?");
+    getStatement().setInt(1, code);
+    
+    ResultSet result = getQueryResult();
+    
+    if (result.next()) {
+      return result.getString(1);
+    }
+    
+    return null;
   }
 }

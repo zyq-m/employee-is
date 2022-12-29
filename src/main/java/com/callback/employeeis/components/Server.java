@@ -41,7 +41,12 @@ public class Server {
     return pstmt;
   }
   
-  public ResultSet getQueryResult() throws SQLException {
+  /**
+   *
+   * @return
+   * @throws SQLException
+   */
+  public static ResultSet getQueryResult() throws SQLException {
     return pstmt.executeQuery();
   }
 }
