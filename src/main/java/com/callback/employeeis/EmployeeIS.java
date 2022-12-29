@@ -5,7 +5,7 @@
 
 package com.callback.employeeis;
 
-import com.callback.employeeis.pages.AddDepartment;
+import com.callback.employeeis.pages.*;
 
 /**
  *
@@ -13,7 +13,9 @@ import com.callback.employeeis.pages.AddDepartment;
  */
 public class EmployeeIS {
   public static void main(String[] args) {
-    AddDepartment department = new AddDepartment();
-    department.run();
+//    AddDepartment department = new AddDepartment();
+//    department.run();
+//    DepartmentMenu.run();
+    UpdateDepartment.run();
   }
 }

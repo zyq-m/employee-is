@@ -8,7 +8,7 @@ import com.callback.employeeis.components.Department;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -101,6 +101,10 @@ public class AddDepartment extends javax.swing.JFrame {
   private void addDepartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartBtnActionPerformed
     try {
       department.addDepartment(departNameTF.getText());
+      JOptionPane.showMessageDialog(rootPane, "Department Successfully Added");
+      
+      DepartmentMenu.run();
+      setVisible(false);
     } catch (SQLException ex) {
       Logger.getLogger(AddDepartment.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -136,7 +140,7 @@ public class AddDepartment extends javax.swing.JFrame {
 //    /* Create and display the form */
 //  }
   
-  public void run() {
+  public static void run() {
     java.awt.EventQueue.invokeLater(() -> {
       new AddDepartment().setVisible(true);
     });
