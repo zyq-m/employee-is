@@ -39,7 +39,7 @@ public class Department extends Server {
     setStatement("INSERT INTO department(departName) VALUES(?)");
     getStatement().setString(1, name);
     
-//    getStatement().executeUpdate();
+    getStatement().executeUpdate();
   }
   
   public void updateDepartment(String name, int code) throws SQLException {
@@ -58,9 +58,12 @@ public class Department extends Server {
     ResultSet result = getQueryResult();
     
     if (result.next()) {
-      return result.getString(1);
+      return result.getString(2); // return department name
     }
     
     return null;
   }
+  
+  // TODO: create checkDepartmentName(): boolean 
+  // TODO: create checkDepartmentCode(): boolean 
 }

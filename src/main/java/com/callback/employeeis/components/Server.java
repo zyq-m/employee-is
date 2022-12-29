@@ -4,7 +4,6 @@
  */
 package com.callback.employeeis.components;
 
-import com.callback.employeeis.pages.AddDepartment;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,7 +23,6 @@ public class Server {
       conn =
          DriverManager.getConnection("jdbc:mysql://localhost/employee_is?" +
                                      "user=root&password=");
-      System.out.println("test");
     } catch (SQLException ex) {
       // handle any errors
       System.out.println("SQLException: " + ex.getMessage());

@@ -13,9 +13,6 @@ import com.callback.employeeis.pages.*;
  */
 public class EmployeeIS {
   public static void main(String[] args) {
-//    AddDepartment department = new AddDepartment();
-//    department.run();
-//    DepartmentMenu.run();
-    UpdateDepartment.run();
+    DepartmentMenu.run();
   }
 }
