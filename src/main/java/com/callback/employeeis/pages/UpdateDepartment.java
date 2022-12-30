@@ -157,14 +157,20 @@ public class UpdateDepartment extends javax.swing.JFrame {
   }//GEN-LAST:event_searchBtnActionPerformed
 
   private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+    String departName = updateDeparmentName.getText();
+    
     try {
-      department.updateDepartment(updateDeparmentName.getText(), 
-              departmentCodeInput);
-      Popup.setPopupInfo(rootPane, 
-             "Department Name Successfully Update");
-      
-      DepartmentMenu.run();
-      setVisible(false);
+      if (department.checkDepartmentName(departName)) { 
+        department.addDepartment(departName);
+        Popup.setPopupInfo(rootPane, 
+                "Department Name Successfully Updated");
+        
+        DepartmentMenu.run();
+        setVisible(false);
+      } else {
+        Popup.setPopupWarning(rootPane, 
+                "Invalid Department Name");
+      }
     } catch (SQLException ex) {
       Logger.getLogger(UpdateDepartment.class.getName()).log(Level.SEVERE, null, ex);
     }
