@@ -7,7 +7,6 @@ package com.callback.employeeis.pages;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 import com.callback.employeeis.components.Department;
 import com.callback.employeeis.components.Popup;
@@ -98,13 +97,20 @@ public class AddDepartment extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void addDepartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartBtnActionPerformed
+    String departName = departNameTF.getText();
+    
     try {
-      department.addDepartment(departNameTF.getText());
-      Popup.setPopupInfo(rootPane, 
-              "Department Successfully Added");
-      
-      DepartmentMenu.run();
-      setVisible(false);
+      if (department.checkDepartmentName(departName)) { 
+        department.addDepartment(departName);
+        Popup.setPopupInfo(rootPane, 
+                "Department Successfully Added");
+        
+        DepartmentMenu.run();
+        setVisible(false);
+      } else {
+        Popup.setPopupWarning(rootPane, 
+                "Invalid Department Name");
+      }
     } catch (SQLException ex) {
       Logger.getLogger(AddDepartment.class.getName()).log(Level.SEVERE, null, ex);
     }

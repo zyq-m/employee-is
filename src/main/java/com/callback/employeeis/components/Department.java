@@ -6,6 +6,8 @@ package com.callback.employeeis.components;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 /**
  *
@@ -14,6 +16,7 @@ import java.sql.ResultSet;
 public class Department extends Server {
   private String name;
   private int code;
+  private final String DEPARTMENT_NAME_REGEX = "(^[A-Z]+[a-zA-Z\\s-&]{2,14})*$";
 
   public Department() {
     super();
@@ -65,5 +68,11 @@ public class Department extends Server {
   }
   
   // TODO: create checkDepartmentName(): boolean 
-  // TODO: create checkDepartmentCode(): boolean 
+  public boolean checkDepartmentName(String name) {
+    final Pattern pattern = Pattern.compile(DEPARTMENT_NAME_REGEX);
+    final Matcher matcher = pattern.matcher(name);
+    
+    return matcher.matches();
+  }
+  
 }
