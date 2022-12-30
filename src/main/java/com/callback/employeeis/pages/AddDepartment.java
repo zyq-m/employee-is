@@ -4,11 +4,13 @@
  */
 package com.callback.employeeis.pages;
 
-import com.callback.employeeis.components.Department;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JDialog;
+
+import com.callback.employeeis.components.Department;
+import com.callback.employeeis.components.Popup;
+import com.callback.employeeis.components.Event;
 
 /**
  *
@@ -52,9 +54,9 @@ public class AddDepartment extends javax.swing.JFrame {
     setTitle("Add Department");
     setBackground(new java.awt.Color(204, 204, 204));
 
-    departNameTF.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        departNameTFTFActionPerformed(evt);
+    departNameTF.addKeyListener(new java.awt.event.KeyAdapter() {
+      public void keyPressed(java.awt.event.KeyEvent evt) {
+        departNameTFKeyPressed(evt);
       }
     });
 
@@ -94,17 +96,31 @@ public class AddDepartment extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void departNameTFTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departNameTFTFActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_departNameTFTFActionPerformed
-
   private void addDepartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartBtnActionPerformed
+    String departName = departNameTF.getText();
+    
     try {
-      department.addDepartment(departNameTF.getText());
+      if (department.checkDepartmentName(departName)) { 
+        department.addDepartment(departName);
+        Popup.setPopupInfo(rootPane, 
+                "Department Successfully Added");
+        
+        DepartmentMenu.run();
+        setVisible(false);
+      } else {
+        Popup.setPopupWarning(rootPane, 
+                "Invalid Department Name");
+      }
     } catch (SQLException ex) {
       Logger.getLogger(AddDepartment.class.getName()).log(Level.SEVERE, null, ex);
     }
   }//GEN-LAST:event_addDepartBtnActionPerformed
+
+  private void departNameTFKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_departNameTFKeyPressed
+    if (Event.onEnter(evt)) {
+      addDepartBtnActionPerformed(null);
+    }
+  }//GEN-LAST:event_departNameTFKeyPressed
 
   /**
    * @param args the command line arguments
@@ -136,7 +152,7 @@ public class AddDepartment extends javax.swing.JFrame {
 //    /* Create and display the form */
 //  }
   
-  public void run() {
+  public static void run() {
     java.awt.EventQueue.invokeLater(() -> {
       new AddDepartment().setVisible(true);
     });
