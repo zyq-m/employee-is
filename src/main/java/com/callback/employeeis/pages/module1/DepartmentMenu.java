@@ -11,12 +11,13 @@ import com.callback.employeeis.pages.MainMenu;
  * @author HAZIQ
  */
 public class DepartmentMenu extends javax.swing.JFrame {
-  private final MainMenu menu = new MainMenu();
+  private final MainMenu menu;
   
   /**
    * Creates new form DepartmentMenu
    */
   public DepartmentMenu() {
+    this.menu = new MainMenu();
     initComponents();
   }
 

@@ -5,12 +5,19 @@
 package com.callback.employeeis.pages;
 
 import com.callback.employeeis.pages.module1.DepartmentMenu;
+//import com.callback.employeeis.pages.module2.EmployeeMenu;
+import com.callback.employeeis.pages.module3.Telephone_Directory_Maintenance;
+import com.callback.employeeis.pages.module4.fram1;
 
 /**
  *
  * @author HAZIQ
  */
 public class MainMenu extends javax.swing.JFrame {
+//  private EmployeeMenu employeMenu;
+  private Telephone_Directory_Maintenance telephoneMenu;
+  private fram1 reportMenu;
+  
   /**
    * Creates new form MainMenu
    */
@@ -104,15 +111,21 @@ public class MainMenu extends javax.swing.JFrame {
   }//GEN-LAST:event_departmentBtnActionPerformed
 
   private void telephoneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telephoneBtnActionPerformed
-    // TODO add your handling code here:
+    telephoneMenu = new Telephone_Directory_Maintenance();
+    telephoneMenu.show();
+    dispose();
   }//GEN-LAST:event_telephoneBtnActionPerformed
 
   private void reportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportBtnActionPerformed
-    // TODO add your handling code here:
+    reportMenu = new fram1();
+    reportMenu.show();
+    dispose();
   }//GEN-LAST:event_reportBtnActionPerformed
 
   private void employeeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeBtnActionPerformed
-    // TODO add your handling code here:
+//    employeMenu = new EmployeeMenu();
+//    employeMenu.show();
+    dispose();
   }//GEN-LAST:event_employeeBtnActionPerformed
 
   /**

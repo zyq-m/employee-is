@@ -196,7 +196,7 @@ public class UpdateDepartment extends javax.swing.JFrame {
                 "Department Name Successfully Updated");
         
         menu.show();
-        menu.dispose();
+        backBtnActionPerformed(null);
       } else {
         Popup.setPopupWarning(rootPane, 
                 "Invalid Department Name");
@@ -224,6 +224,7 @@ public class UpdateDepartment extends javax.swing.JFrame {
 
   private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
     menu.show();
+    department.closeConnection();
     dispose();
   }//GEN-LAST:event_backBtnActionPerformed
 
