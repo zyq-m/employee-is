@@ -5,7 +5,7 @@
 
 package com.callback.employeeis;
 
-import com.callback.employeeis.pages.*;
+import com.callback.employeeis.pages.MainMenu;
 
 /**
  *
@@ -13,6 +13,7 @@ import com.callback.employeeis.pages.*;
  */
 public class EmployeeIS {
   public static void main(String[] args) {
-    DepartmentMenu.run();
+    MainMenu menu = new MainMenu();
+    menu.show();
   }
 }

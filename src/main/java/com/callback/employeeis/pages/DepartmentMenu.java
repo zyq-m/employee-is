@@ -9,6 +9,9 @@ package com.callback.employeeis.pages;
  * @author HAZIQ
  */
 public class DepartmentMenu extends javax.swing.JFrame {
+  private final AddDepartment addMenu = new AddDepartment();
+  private final UpdateDepartment updateMenu = new UpdateDepartment();
+  
   /**
    * Creates new form DepartmentMenu
    */
@@ -26,8 +29,8 @@ public class DepartmentMenu extends javax.swing.JFrame {
   private void initComponents() {
 
     jLabel1 = new javax.swing.JLabel();
-    addDepartment = new javax.swing.JLabel();
-    updateDeparment = new javax.swing.JLabel();
+    updateDepartment = new javax.swing.JButton();
+    addDepartment = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Department Menu");
@@ -35,17 +38,17 @@ public class DepartmentMenu extends javax.swing.JFrame {
 
     jLabel1.setText("Deparment Menu");
 
-    addDepartment.setText("Add Department");
-    addDepartment.addMouseListener(new java.awt.event.MouseAdapter() {
-      public void mouseClicked(java.awt.event.MouseEvent evt) {
-        addDepartmentMouseClicked(evt);
+    updateDepartment.setText("Update Department");
+    updateDepartment.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        updateDepartmentActionPerformed(evt);
       }
     });
 
-    updateDeparment.setText("Update Department");
-    updateDeparment.addMouseListener(new java.awt.event.MouseAdapter() {
-      public void mouseClicked(java.awt.event.MouseEvent evt) {
-        updateDeparmentMouseClicked(evt);
+    addDepartment.setText("Add Department");
+    addDepartment.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        addDepartmentActionPerformed(evt);
       }
     });
 
@@ -54,77 +57,45 @@ public class DepartmentMenu extends javax.swing.JFrame {
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addGap(68, 68, 68)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(updateDeparment)
-          .addComponent(addDepartment)
-          .addComponent(jLabel1))
-        .addContainerGap(341, Short.MAX_VALUE))
+          .addGroup(layout.createSequentialGroup()
+            .addGap(183, 183, 183)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(updateDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(addDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+          .addGroup(layout.createSequentialGroup()
+            .addGap(202, 202, 202)
+            .addComponent(jLabel1)))
+        .addContainerGap(196, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addGap(86, 86, 86)
+        .addContainerGap(78, Short.MAX_VALUE)
         .addComponent(jLabel1)
-        .addGap(18, 18, 18)
+        .addGap(27, 27, 27)
         .addComponent(addDepartment)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(updateDeparment)
-        .addContainerGap(174, Short.MAX_VALUE))
+        .addGap(18, 18, 18)
+        .addComponent(updateDepartment)
+        .addGap(149, 149, 149))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void addDepartmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addDepartmentMouseClicked
-    AddDepartment.run();
-    setVisible(false);
-  }//GEN-LAST:event_addDepartmentMouseClicked
+  private void updateDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateDepartmentActionPerformed
+    updateDepartment.show();
+    dispose();
+  }//GEN-LAST:event_updateDepartmentActionPerformed
 
-  private void updateDeparmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateDeparmentMouseClicked
-    UpdateDepartment.run();
-    setVisible(false);
-  }//GEN-LAST:event_updateDeparmentMouseClicked
-
-  /**
-   * @param args the command line arguments
-   */
-//  public static void main(String args[]) {
-//    /* Set the Nimbus look and feel */
-//    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//     */
-//    try {
-//      for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//        if ("Nimbus".equals(info.getName())) {
-//          javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//          break;
-//        }
-//      }
-//    } catch (ClassNotFoundException ex) {
-//      java.util.logging.Logger.getLogger(DepartmentMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (InstantiationException ex) {
-//      java.util.logging.Logger.getLogger(DepartmentMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (IllegalAccessException ex) {
-//      java.util.logging.Logger.getLogger(DepartmentMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//      java.util.logging.Logger.getLogger(DepartmentMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    }
-//    //</editor-fold>
-//
-//    /* Create and display the form */
-//  }
-   
-  public static void run() {
-    java.awt.EventQueue.invokeLater(() -> {
-      new DepartmentMenu().setVisible(true);
-    });
-  }
+  private void addDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartmentActionPerformed
+    addMenu.show();
+    dispose();
+  }//GEN-LAST:event_addDepartmentActionPerformed
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JLabel addDepartment;
+  private javax.swing.JButton addDepartment;
   private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel updateDeparment;
+  private javax.swing.JButton updateDepartment;
   // End of variables declaration//GEN-END:variables
 }

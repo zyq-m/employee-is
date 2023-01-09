@@ -23,7 +23,7 @@ public class Department extends Server {
   }
   
   public void setName(String name) {
-    name = name;
+    this.name = name;
   }
   
   public String getName() {
@@ -31,7 +31,7 @@ public class Department extends Server {
   }
   
   public void setCode(int code) {
-    code = code;
+    this.code = code;
   }
   
   public int getCode() {

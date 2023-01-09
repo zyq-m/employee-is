@@ -28,7 +28,7 @@ public class Server {
       System.out.println("SQLException: " + ex.getMessage());
       System.out.println("SQLState: " + ex.getSQLState());
       System.out.println("VendorError: " + ex.getErrorCode());
-    }
+    }  
   }
   
   public static void setStatement(String query) throws SQLException {
