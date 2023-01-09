@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/HAZIQ/.m2/repository/com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar;C:/Users/HAZIQ/.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'18'
+-sourcepath
+'C:/Users/HAZIQ/Documents/NetBeansProjects/EmployeeIS/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/HAZIQ/Documents/NetBeansProjects/EmployeeIS/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'EmployeeIS 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'EmployeeIS 1.0-SNAPSHOT API'
