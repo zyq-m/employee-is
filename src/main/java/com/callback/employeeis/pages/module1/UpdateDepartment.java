@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.callback.employeeis.pages;
+package com.callback.employeeis.pages.module1;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 import com.callback.employeeis.components.Department;
 import com.callback.employeeis.components.Popup;
@@ -18,13 +17,15 @@ import com.callback.employeeis.components.Event;
  * @author HAZIQ
  */
 public class UpdateDepartment extends javax.swing.JFrame {
-  private Department department = new Department();
+  private final Department department;
+  private final DepartmentMenu menu = new DepartmentMenu();
   private int departmentCodeInput;
   
   /**
    * Creates new form UpdateDepartment
    */
   public UpdateDepartment() {
+    this.department = new Department();
     initComponents();
     jPanel1.setVisible(false);
   }
@@ -44,10 +45,11 @@ public class UpdateDepartment extends javax.swing.JFrame {
     jLabel1 = new javax.swing.JLabel();
     updateDeparmentName = new javax.swing.JTextField();
     updateBtn = new javax.swing.JButton();
+    jLabel2 = new javax.swing.JLabel();
+    backBtn = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Update Department");
-    setPreferredSize(new java.awt.Dimension(649, 391));
 
     searchDepartmentCode.setText("Search for deparment code...");
     searchDepartmentCode.setToolTipText("Search for department code...");
@@ -106,35 +108,63 @@ public class UpdateDepartment extends javax.swing.JFrame {
         .addContainerGap(22, Short.MAX_VALUE))
     );
 
+    jLabel2.setText("Update Department");
+
+    backBtn.setText("Back");
+    backBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        backBtnActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
         .addGap(68, 68, 68)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addGroup(layout.createSequentialGroup()
-            .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(searchBtn)))
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel2)
+          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+              .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(searchBtn))))
         .addContainerGap(192, Short.MAX_VALUE))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(backBtn)
+        .addGap(22, 22, 22))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addGap(85, 85, 85)
+        .addGap(51, 51, 51)
+        .addComponent(jLabel2)
+        .addGap(18, 18, 18)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(31, 31, 31)
         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(48, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(backBtn)
+        .addContainerGap(20, Short.MAX_VALUE))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   *
+   */
+  public static void run() {	
+    java.awt.EventQueue.invokeLater(() -> {	
+      new UpdateDepartment().setVisible(true);	
+    });	
+  }
+  
   private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
     // TODO: check code department
     String result = null;
@@ -165,8 +195,8 @@ public class UpdateDepartment extends javax.swing.JFrame {
         Popup.setPopupInfo(rootPane, 
                 "Department Name Successfully Updated");
         
-        DepartmentMenu.run();
-        setVisible(false);
+        menu.show();
+        menu.dispose();
       } else {
         Popup.setPopupWarning(rootPane, 
                 "Invalid Department Name");
@@ -192,43 +222,15 @@ public class UpdateDepartment extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_updateDeparmentNameKeyPressed
 
-  /**
-   * @param args the command line arguments
-   */
-//  public static void main(String args[]) {
-//    /* Set the Nimbus look and feel */
-//    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//     */
-//    try {
-//      for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//        if ("Nimbus".equals(info.getName())) {
-//          javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//          break;
-//        }
-//      }
-//    } catch (ClassNotFoundException ex) {
-//      java.util.logging.Logger.getLogger(UpdateDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (InstantiationException ex) {
-//      java.util.logging.Logger.getLogger(UpdateDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (IllegalAccessException ex) {
-//      java.util.logging.Logger.getLogger(UpdateDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//      java.util.logging.Logger.getLogger(UpdateDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    }
-//    //</editor-fold>
-//
-//  }
-  
-  public static void run() {
-    java.awt.EventQueue.invokeLater(() -> {
-      new UpdateDepartment().setVisible(true);
-    });
-  }
+  private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    menu.show();
+    dispose();
+  }//GEN-LAST:event_backBtnActionPerformed
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton backBtn;
   private javax.swing.JLabel jLabel1;
+  private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JButton searchBtn;
   private javax.swing.JTextField searchDepartmentCode;

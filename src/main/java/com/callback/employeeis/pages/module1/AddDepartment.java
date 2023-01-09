@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.callback.employeeis.pages;
+package com.callback.employeeis.pages.module1;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -17,7 +17,9 @@ import com.callback.employeeis.components.Event;
  * @author HAZIQ
  */
 public class AddDepartment extends javax.swing.JFrame {
-  private Department department = new Department();
+  private final Department department = new Department();
+  private final DepartmentMenu menu = new DepartmentMenu();
+  
   /**
    * Creates new form AddDepartment
    */
@@ -38,6 +40,7 @@ public class AddDepartment extends javax.swing.JFrame {
     departNameTF = new javax.swing.JTextField();
     jLabel1 = new javax.swing.JLabel();
     addDepartBtn = new javax.swing.JButton();
+    backBtn = new javax.swing.JButton();
 
     javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
     jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -69,6 +72,13 @@ public class AddDepartment extends javax.swing.JFrame {
       }
     });
 
+    backBtn.setText("Back");
+    backBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        backBtnActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -80,6 +90,10 @@ public class AddDepartment extends javax.swing.JFrame {
           .addComponent(jLabel1)
           .addComponent(departNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(307, Short.MAX_VALUE))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(backBtn)
+        .addGap(31, 31, 31))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,12 +104,20 @@ public class AddDepartment extends javax.swing.JFrame {
         .addComponent(departNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
         .addComponent(addDepartBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(152, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+        .addComponent(backBtn)
+        .addGap(27, 27, 27))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  public static void run() {
+    java.awt.EventQueue.invokeLater(() -> {
+      new AddDepartment().setVisible(true);
+    });
+  }
+  
   private void addDepartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartBtnActionPerformed
     String departName = departNameTF.getText();
     
@@ -105,8 +127,8 @@ public class AddDepartment extends javax.swing.JFrame {
         Popup.setPopupInfo(rootPane, 
                 "Department Successfully Added");
         
-        DepartmentMenu.run();
-        setVisible(false);
+        menu.show();
+        dispose();
       } else {
         Popup.setPopupWarning(rootPane, 
                 "Invalid Department Name");
@@ -122,44 +144,14 @@ public class AddDepartment extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_departNameTFKeyPressed
 
-  /**
-   * @param args the command line arguments
-   */
-//  public static void main(String args[]) {
-//    /* Set the Nimbus look and feel */
-//    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//     */
-//    try {
-//      for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//        if ("Nimbus".equals(info.getName())) {
-//          javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//          break;
-//        }
-//      }
-//    } catch (ClassNotFoundException ex) {
-//      java.util.logging.Logger.getLogger(AddDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (InstantiationException ex) {
-//      java.util.logging.Logger.getLogger(AddDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (IllegalAccessException ex) {
-//      java.util.logging.Logger.getLogger(AddDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//      java.util.logging.Logger.getLogger(AddDepartment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//    }
-//    //</editor-fold>
-//
-//    /* Create and display the form */
-//  }
-  
-  public static void run() {
-    java.awt.EventQueue.invokeLater(() -> {
-      new AddDepartment().setVisible(true);
-    });
-  }
+  private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    menu.show();
+    dispose();
+  }//GEN-LAST:event_backBtnActionPerformed
   
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton addDepartBtn;
+  private javax.swing.JButton backBtn;
   private javax.swing.JTextField departNameTF;
   private javax.swing.JFrame jFrame1;
   private javax.swing.JLabel jLabel1;
