@@ -128,7 +128,7 @@ public class AddDepartment extends javax.swing.JFrame {
                 "Department Successfully Added");
         
         menu.show();
-        dispose();
+        backBtnActionPerformed(null);
       } else {
         Popup.setPopupWarning(rootPane, 
                 "Invalid Department Name");
@@ -146,6 +146,7 @@ public class AddDepartment extends javax.swing.JFrame {
 
   private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
     menu.show();
+    department.closeConnection();
     dispose();
   }//GEN-LAST:event_backBtnActionPerformed
   
