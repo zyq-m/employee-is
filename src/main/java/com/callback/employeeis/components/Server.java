@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +30,13 @@ public class Server {
       System.out.println("SQLException: " + ex.getMessage());
       System.out.println("SQLState: " + ex.getSQLState());
       System.out.println("VendorError: " + ex.getErrorCode());
-    }  
+    } finally {
+      try {
+        conn.close();
+      } catch (SQLException ex) {
+        Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
   }
   
   public static void setStatement(String query) throws SQLException {

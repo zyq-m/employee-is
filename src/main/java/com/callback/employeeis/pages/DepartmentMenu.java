@@ -9,8 +9,7 @@ package com.callback.employeeis.pages;
  * @author HAZIQ
  */
 public class DepartmentMenu extends javax.swing.JFrame {
-  private final AddDepartment addMenu = new AddDepartment();
-  private final UpdateDepartment updateMenu = new UpdateDepartment();
+  private final MainMenu menu = new MainMenu();
   
   /**
    * Creates new form DepartmentMenu
@@ -31,6 +30,7 @@ public class DepartmentMenu extends javax.swing.JFrame {
     jLabel1 = new javax.swing.JLabel();
     updateDepartment = new javax.swing.JButton();
     addDepartment = new javax.swing.JButton();
+    backBtn = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Department Menu");
@@ -52,6 +52,13 @@ public class DepartmentMenu extends javax.swing.JFrame {
       }
     });
 
+    backBtn.setText("Back");
+    backBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        backBtnActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -59,13 +66,15 @@ public class DepartmentMenu extends javax.swing.JFrame {
       .addGroup(layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createSequentialGroup()
-            .addGap(183, 183, 183)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addComponent(updateDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-              .addComponent(addDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-          .addGroup(layout.createSequentialGroup()
             .addGap(202, 202, 202)
-            .addComponent(jLabel1)))
+            .addComponent(jLabel1))
+          .addGroup(layout.createSequentialGroup()
+            .addGap(183, 183, 183)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(updateDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
         .addContainerGap(196, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
@@ -77,24 +86,38 @@ public class DepartmentMenu extends javax.swing.JFrame {
         .addComponent(addDepartment)
         .addGap(18, 18, 18)
         .addComponent(updateDepartment)
-        .addGap(149, 149, 149))
+        .addGap(18, 18, 18)
+        .addComponent(backBtn)
+        .addGap(109, 109, 109))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
-
+  
+  public static void run() {
+    java.awt.EventQueue.invokeLater(() -> {
+      new AddDepartment().setVisible(true);
+    });
+  }
+  
   private void updateDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateDepartmentActionPerformed
-    updateDepartment.show();
+    UpdateDepartment.run();
     dispose();
   }//GEN-LAST:event_updateDepartmentActionPerformed
 
   private void addDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDepartmentActionPerformed
-    addMenu.show();
+    AddDepartment.run();
     dispose();
   }//GEN-LAST:event_addDepartmentActionPerformed
 
+  private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    menu.show();
+    dispose();
+  }//GEN-LAST:event_backBtnActionPerformed
+
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton addDepartment;
+  private javax.swing.JButton backBtn;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JButton updateDepartment;
   // End of variables declaration//GEN-END:variables

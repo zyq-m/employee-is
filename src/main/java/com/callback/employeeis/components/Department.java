@@ -46,8 +46,8 @@ public class Department extends Server {
   }
   
   public void updateDepartment(String name, int code) throws SQLException {
-    setStatement("UPDATE department SET departName = ? WHERE "
-            + "departCode = ?");
+    setStatement("UPDATE department SET DepartName = ? WHERE "
+            + "DepartCode = ?");
     getStatement().setString(1, name);
     getStatement().setInt(2, code);
     
@@ -55,7 +55,7 @@ public class Department extends Server {
   }
   
   public String getDepartmentName(int code) throws SQLException {
-    setStatement("SELECT * FROM department WHERE departCode = ?");
+    setStatement("SELECT * FROM department WHERE DepartCode = ?");
     getStatement().setInt(1, code);
     
     ResultSet result = getQueryResult();

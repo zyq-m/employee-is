@@ -17,7 +17,7 @@ import com.callback.employeeis.components.Event;
  * @author HAZIQ
  */
 public class UpdateDepartment extends javax.swing.JFrame {
-  private final Department department = new Department();
+  private final Department department;
   private final DepartmentMenu menu = new DepartmentMenu();
   private int departmentCodeInput;
   
@@ -25,6 +25,7 @@ public class UpdateDepartment extends javax.swing.JFrame {
    * Creates new form UpdateDepartment
    */
   public UpdateDepartment() {
+    this.department = new Department();
     initComponents();
     jPanel1.setVisible(false);
   }
@@ -156,6 +157,15 @@ public class UpdateDepartment extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   *
+   */
+  public static void run() {	
+    java.awt.EventQueue.invokeLater(() -> {	
+      new UpdateDepartment().setVisible(true);	
+    });	
+  }
+  
   private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
     // TODO: check code department
     String result = null;
