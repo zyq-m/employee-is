@@ -4,6 +4,8 @@
  */
 package com.callback.employeeis.pages;
 
+import com.callback.employeeis.pages.module1.DepartmentMenu;
+
 /**
  *
  * @author HAZIQ

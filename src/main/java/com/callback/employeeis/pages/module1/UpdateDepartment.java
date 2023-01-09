@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.callback.employeeis.pages;
+package com.callback.employeeis.pages.module1;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -50,7 +50,6 @@ public class UpdateDepartment extends javax.swing.JFrame {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Update Department");
-    setPreferredSize(new java.awt.Dimension(649, 391));
 
     searchDepartmentCode.setText("Search for deparment code...");
     searchDepartmentCode.setToolTipText("Search for department code...");
