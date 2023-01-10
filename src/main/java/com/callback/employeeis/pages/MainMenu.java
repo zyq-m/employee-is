@@ -34,16 +34,20 @@ public class MainMenu extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    jLabel1 = new javax.swing.JLabel();
+    jPanel1 = new javax.swing.JPanel();
     departmentBtn = new javax.swing.JButton();
+    employeeBtn = new javax.swing.JButton();
     telephoneBtn = new javax.swing.JButton();
     reportBtn = new javax.swing.JButton();
-    employeeBtn = new javax.swing.JButton();
+    jLabel1 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setTitle("Employee Information System");
 
-    jLabel1.setText("Employee Information System");
+    jPanel1.setBackground(new java.awt.Color(255, 204, 0));
 
+    departmentBtn.setBackground(new java.awt.Color(51, 51, 51));
+    departmentBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     departmentBtn.setText("Department Maintenance");
     departmentBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,20 +55,8 @@ public class MainMenu extends javax.swing.JFrame {
       }
     });
 
-    telephoneBtn.setText("Telephone Directory Maintenance");
-    telephoneBtn.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        telephoneBtnActionPerformed(evt);
-      }
-    });
-
-    reportBtn.setText("Report");
-    reportBtn.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        reportBtnActionPerformed(evt);
-      }
-    });
-
+    employeeBtn.setBackground(new java.awt.Color(51, 51, 51));
+    employeeBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     employeeBtn.setText("Employee Maintenance");
     employeeBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,34 +64,71 @@ public class MainMenu extends javax.swing.JFrame {
       }
     });
 
+    telephoneBtn.setBackground(new java.awt.Color(51, 51, 51));
+    telephoneBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+    telephoneBtn.setText("Telephone Directory Maintenance");
+    telephoneBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        telephoneBtnActionPerformed(evt);
+      }
+    });
+
+    reportBtn.setBackground(new java.awt.Color(51, 51, 51));
+    reportBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+    reportBtn.setText("Report");
+    reportBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        reportBtnActionPerformed(evt);
+      }
+    });
+
+    jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+    jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel1.setText("Employee Information System");
+
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(97, 97, 97)
+        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGap(77, 77, 77))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addComponent(telephoneBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(employeeBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(departmentBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(reportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(109, 109, 109))
+    );
+    jPanel1Layout.setVerticalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(49, 49, 49)
+        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGap(33, 33, 33)
+        .addComponent(departmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(12, 12, 12)
+        .addComponent(employeeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addComponent(telephoneBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(12, 12, 12)
+        .addComponent(reportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(82, 82, 82))
+    );
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addGap(120, 120, 120)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(employeeBtn)
-          .addComponent(reportBtn)
-          .addComponent(telephoneBtn)
-          .addComponent(departmentBtn)
-          .addComponent(jLabel1))
-        .addContainerGap(72, Short.MAX_VALUE))
+      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addGap(27, 27, 27)
-        .addComponent(jLabel1)
-        .addGap(39, 39, 39)
-        .addComponent(departmentBtn)
-        .addGap(18, 18, 18)
-        .addComponent(employeeBtn)
-        .addGap(18, 18, 18)
-        .addComponent(telephoneBtn)
-        .addGap(18, 18, 18)
-        .addComponent(reportBtn)
-        .addContainerGap(76, Short.MAX_VALUE))
+      .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
 
     pack();
@@ -167,6 +196,7 @@ public class MainMenu extends javax.swing.JFrame {
   private javax.swing.JButton departmentBtn;
   private javax.swing.JButton employeeBtn;
   private javax.swing.JLabel jLabel1;
+  private javax.swing.JPanel jPanel1;
   private javax.swing.JButton reportBtn;
   private javax.swing.JButton telephoneBtn;
   // End of variables declaration//GEN-END:variables
