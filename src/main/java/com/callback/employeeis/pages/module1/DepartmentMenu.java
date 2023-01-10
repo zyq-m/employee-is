@@ -30,23 +30,22 @@ public class DepartmentMenu extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    jPanel1 = new javax.swing.JPanel();
     jLabel1 = new javax.swing.JLabel();
-    updateDepartment = new javax.swing.JButton();
     addDepartment = new javax.swing.JButton();
+    updateDepartment = new javax.swing.JButton();
     backBtn = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Department Menu");
 
-    jLabel1.setText("Deparment Menu");
+    jPanel1.setBackground(new java.awt.Color(255, 204, 0));
 
-    updateDepartment.setText("Update Department");
-    updateDepartment.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        updateDepartmentActionPerformed(evt);
-      }
-    });
+    jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(30, 30, 30));
+    jLabel1.setText("Department Menu");
 
+    addDepartment.setBackground(new java.awt.Color(47, 47, 47));
     addDepartment.setText("Add Department");
     addDepartment.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +53,15 @@ public class DepartmentMenu extends javax.swing.JFrame {
       }
     });
 
+    updateDepartment.setBackground(new java.awt.Color(47, 47, 47));
+    updateDepartment.setText("Update Department");
+    updateDepartment.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        updateDepartmentActionPerformed(evt);
+      }
+    });
+
+    backBtn.setBackground(new java.awt.Color(47, 47, 47));
     backBtn.setText("Back");
     backBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,36 +69,47 @@ public class DepartmentMenu extends javax.swing.JFrame {
       }
     });
 
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(141, 141, 141)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel1)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(11, 11, 11)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(updateDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(addDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        .addContainerGap(154, Short.MAX_VALUE))
+    );
+    jPanel1Layout.setVerticalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(65, 65, 65)
+        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGap(26, 26, 26)
+        .addComponent(addDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(updateDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(97, 97, 97))
+    );
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(layout.createSequentialGroup()
-            .addGap(202, 202, 202)
-            .addComponent(jLabel1))
-          .addGroup(layout.createSequentialGroup()
-            .addGap(183, 183, 183)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(updateDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addDepartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-        .addContainerGap(196, Short.MAX_VALUE))
+      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addContainerGap(78, Short.MAX_VALUE)
-        .addComponent(jLabel1)
-        .addGap(27, 27, 27)
-        .addComponent(addDepartment)
-        .addGap(18, 18, 18)
-        .addComponent(updateDepartment)
-        .addGap(18, 18, 18)
-        .addComponent(backBtn)
-        .addGap(109, 109, 109))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     pack();
@@ -98,7 +117,7 @@ public class DepartmentMenu extends javax.swing.JFrame {
   
   public static void run() {
     java.awt.EventQueue.invokeLater(() -> {
-      new AddDepartment().setVisible(true);
+      new DepartmentMenu().setVisible(true);
     });
   }
   
@@ -121,6 +140,7 @@ public class DepartmentMenu extends javax.swing.JFrame {
   private javax.swing.JButton addDepartment;
   private javax.swing.JButton backBtn;
   private javax.swing.JLabel jLabel1;
+  private javax.swing.JPanel jPanel1;
   private javax.swing.JButton updateDepartment;
   // End of variables declaration//GEN-END:variables
 }

@@ -16,10 +16,11 @@ import java.util.regex.Matcher;
 public class Department extends Server {
   private String name;
   private int code;
-  private final String DEPARTMENT_NAME_REGEX = "(^[A-Z]+[a-zA-Z\\s-&]{2,14})*$";
+  private final String DEPARTMENT_NAME_REGEX;
 
   public Department() {
     super();
+    this.DEPARTMENT_NAME_REGEX = "(^[A-Z]+[a-zA-Z\\s-&]{2,14})*$";
   }
   
   public void setName(String name) {

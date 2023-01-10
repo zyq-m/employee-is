@@ -18,13 +18,14 @@ import com.callback.employeeis.components.Event;
  */
 public class UpdateDepartment extends javax.swing.JFrame {
   private final Department department;
-  private final DepartmentMenu menu = new DepartmentMenu();
+  private final DepartmentMenu menu;
   private int departmentCodeInput;
   
   /**
    * Creates new form UpdateDepartment
    */
   public UpdateDepartment() {
+    this.menu = new DepartmentMenu();
     this.department = new Department();
     initComponents();
     jPanel1.setVisible(false);
@@ -39,18 +40,27 @@ public class UpdateDepartment extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    jPanel2 = new javax.swing.JPanel();
+    jLabel2 = new javax.swing.JLabel();
     searchDepartmentCode = new javax.swing.JTextField();
     searchBtn = new javax.swing.JButton();
     jPanel1 = new javax.swing.JPanel();
     jLabel1 = new javax.swing.JLabel();
     updateDeparmentName = new javax.swing.JTextField();
     updateBtn = new javax.swing.JButton();
-    jLabel2 = new javax.swing.JLabel();
     backBtn = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Update Department");
 
+    jPanel2.setBackground(new java.awt.Color(255, 204, 0));
+
+    jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+    jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel2.setText("Update Department");
+
+    searchDepartmentCode.setBackground(new java.awt.Color(218, 218, 218));
+    searchDepartmentCode.setForeground(new java.awt.Color(0, 0, 0));
     searchDepartmentCode.setText("Search for deparment code...");
     searchDepartmentCode.setToolTipText("Search for department code...");
     searchDepartmentCode.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,6 +74,7 @@ public class UpdateDepartment extends javax.swing.JFrame {
       }
     });
 
+    searchBtn.setBackground(new java.awt.Color(47, 47, 47));
     searchBtn.setText("Search");
     searchBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,14 +82,20 @@ public class UpdateDepartment extends javax.swing.JFrame {
       }
     });
 
+    jPanel1.setBackground(new java.awt.Color(255, 204, 0));
+
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
     jLabel1.setText("Department Name");
 
+    updateDeparmentName.setBackground(new java.awt.Color(218, 218, 218));
+    updateDeparmentName.setForeground(new java.awt.Color(0, 0, 0));
     updateDeparmentName.addKeyListener(new java.awt.event.KeyAdapter() {
       public void keyPressed(java.awt.event.KeyEvent evt) {
         updateDeparmentNameKeyPressed(evt);
       }
     });
 
+    updateBtn.setBackground(new java.awt.Color(47, 47, 47));
     updateBtn.setText("Update");
     updateBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,8 +125,7 @@ public class UpdateDepartment extends javax.swing.JFrame {
         .addContainerGap(22, Short.MAX_VALUE))
     );
 
-    jLabel2.setText("Update Department");
-
+    backBtn.setBackground(new java.awt.Color(47, 47, 47));
     backBtn.setText("Back");
     backBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,40 +133,53 @@ public class UpdateDepartment extends javax.swing.JFrame {
       }
     });
 
+    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+    jPanel2.setLayout(jPanel2Layout);
+    jPanel2Layout.setHorizontalGroup(
+      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel2Layout.createSequentialGroup()
+        .addGap(107, 107, 107)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel2)
+          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+              .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(searchBtn))))
+        .addContainerGap(107, Short.MAX_VALUE))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(backBtn)
+        .addContainerGap())
+    );
+    jPanel2Layout.setVerticalGroup(
+      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel2Layout.createSequentialGroup()
+        .addGap(40, 40, 40)
+        .addComponent(jLabel2)
+        .addGap(18, 18, 18)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(31, 31, 31)
+        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap())
+    );
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addGap(68, 68, 68)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jLabel2)
-          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-              .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(searchBtn))))
-        .addContainerGap(192, Short.MAX_VALUE))
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(backBtn)
-        .addGap(22, 22, 22))
+        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(layout.createSequentialGroup()
-        .addGap(51, 51, 51)
-        .addComponent(jLabel2)
-        .addGap(18, 18, 18)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(searchDepartmentCode, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(31, 31, 31)
-        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(backBtn)
-        .addContainerGap(20, Short.MAX_VALUE))
+      .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
 
     pack();
@@ -233,6 +262,7 @@ public class UpdateDepartment extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JPanel jPanel1;
+  private javax.swing.JPanel jPanel2;
   private javax.swing.JButton searchBtn;
   private javax.swing.JTextField searchDepartmentCode;
   private javax.swing.JButton updateBtn;
