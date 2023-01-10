@@ -17,13 +17,15 @@ import com.callback.employeeis.components.Event;
  * @author HAZIQ
  */
 public class AddDepartment extends javax.swing.JFrame {
-  private final Department department = new Department();
-  private final DepartmentMenu menu = new DepartmentMenu();
+  private final Department department;
+  private final DepartmentMenu menu;
   
   /**
    * Creates new form AddDepartment
    */
   public AddDepartment() {
+    this.menu = new DepartmentMenu();
+    this.department = new Department();
     initComponents();
   }
 
