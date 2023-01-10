@@ -20,8 +20,6 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class AddEmployee extends javax.swing.JFrame {
-//    public static int id = 1111;
-    public static int notel = 0;
     Connection con = null;
     PreparedStatement pst = null;
     
@@ -273,12 +271,11 @@ public class AddEmployee extends javax.swing.JFrame {
                 
 //                Class.forName("com.mysql.jdbc.Driver");
 //                con=DriverManager.getConnection("jdbc:mysql://localhost:3307/employee","root","");
-                pst=con.prepareStatement("insert into employee(EmployeeName,EmployeeDepartCode,EmployeeLocation,EmployeeTelNum,EmployeeDesignation)values(?,?,?,?,?)");
+                pst=con.prepareStatement("insert into employee(EmployeeName,EmployeeDepartCode,EmployeeLocation,EmployeeDesignation)values(?,?,?,?)");
                 pst.setString(1,Name);
                 pst.setString(2, DepartCode);
                 pst.setString(3,Location);
-                pst.setInt(4, notel); 
-                pst.setString(5, Designation);
+                pst.setString(4, Designation);
                                        
                 if (Name.isBlank()){
                     namemsg.setText("Please enter the employee's name.");
@@ -335,8 +332,8 @@ public class AddEmployee extends javax.swing.JFrame {
             if (namecheck && DepartCodecheck && Locationcheck && dsigncheck){
 
                 String query1 = "insert into employee (EmployeeName, "
-                            + "EmployeeDepartCode, EmployeeLocation, EmployeeTelNum, "
-                            + "EmployeeDesignation) value (?, ?, ?, ?, ?)";
+                            + "EmployeeDepartCode, EmployeeLocation,"
+                            + "EmployeeDesignation) value (?, ?, ?, ?)";
 
                    
                     try {
@@ -344,8 +341,7 @@ public class AddEmployee extends javax.swing.JFrame {
                         pst.setString(1,Name);
                         pst.setString(2, DepartCode);
                         pst.setString(3,Location);
-                        pst.setInt(4, notel);
-                        pst.setString(5, Designation);
+                        pst.setString(4, Designation);
                         
                         pst.executeUpdate();
                         JOptionPane.showMessageDialog(rootPane, "Employee Successfully Added!");
